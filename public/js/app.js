@@ -19,8 +19,7 @@ weather.addEventListener("submit", (e) => {
   message_1.textContent = "Loading ...";
   message_2.textContent = "";
 
-  const url2 =
-    "/weather?address=" + encodeURIComponent(location);
+  const url2 = "/weather?address=" + encodeURIComponent(location);
 
   fetch(url2).then((response) => {
     response.json().then((data) => {
@@ -28,7 +27,7 @@ weather.addEventListener("submit", (e) => {
         return (document.querySelector(".error").textContent = data.error);
       }
 
-      message_1.textContent = data.place;
+      message_1.textContent = data.place + " Local Time: " + data.time;
       message_2.textContent = data.currently;
     });
   });

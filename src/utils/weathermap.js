@@ -18,14 +18,16 @@ const weathermap = (latitude, longitude, callback) => {
       const desc = body.current.weather_descriptions[0];
       const temp = body.current.temperature;
       const feels = body.current.feelslike;
+      const time = body.location.localtime;
       const data = {
         currently: desc,
         temperature: temp,
         feelslike: feels,
+        time: time,
       };
-      callback(undefined,data);
+      callback(undefined, data);
     }
   });
-}; 
+};
 
 module.exports = weathermap;
