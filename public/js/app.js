@@ -20,7 +20,7 @@ weather.addEventListener("submit", (e) => {
   message_2.textContent = "";
 
   const url2 =
-    "http://127.0.0.1:3000/weather?address=" + encodeURIComponent(location);
+    "/weather?address=" + encodeURIComponent(location);
 
   fetch(url2).then((response) => {
     response.json().then((data) => {
